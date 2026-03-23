@@ -1,0 +1,13 @@
+{
+  "version": 1,
+  "halt": false,
+  "halt_set_at": null,
+  "halt_note": "",
+  "stale_task_hours": 48,
+  "max_phase_transitions": 24,
+  "token_soft_limit_24h": 500000,
+  "token_hard_stop_24h": 2000000,
+  "auto_halt_on_hard_token": false,
+  "require_progress_hours": 12,
+  "notes": "halt=true 时禁止自动推进阶段；枢衡与各职推进前必读本文件。"
+}

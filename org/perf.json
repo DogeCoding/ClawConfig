@@ -1,0 +1,5 @@
+{
+  "load1_soft_multiplier": 0.85,
+  "notify_cooldown_seconds": 3600,
+  "note": "软告警：load1 > cpu_count * multiplier 时写入 PERF-WARN；冷却内不重复推飞书"
+}

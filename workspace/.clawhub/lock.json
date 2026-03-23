@@ -1,0 +1,17 @@
+{
+  "version": 1,
+  "skills": {
+    "self-improving-agent": {
+      "version": "3.0.5",
+      "installedAt": 1774157102395
+    },
+    "multi-search-engine": {
+      "version": "2.0.1",
+      "installedAt": 1774159442244
+    },
+    "feishu-messaging": {
+      "version": "0.0.3",
+      "installedAt": 1774207801628
+    }
+  }
+}

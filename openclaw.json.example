@@ -1,0 +1,359 @@
+{
+  "meta": {
+    "lastTouchedVersion": "2026.3.13",
+    "lastTouchedAt": "2026-03-21T11:45:05.024Z"
+  },
+  "wizard": {
+    "lastRunAt": "2026-03-21T11:45:04.983Z",
+    "lastRunVersion": "2026.3.13",
+    "lastRunCommand": "configure",
+    "lastRunMode": "local"
+  },
+  "auth": {
+    "profiles": {
+      "volcengine:default": {
+        "provider": "volcengine",
+        "mode": "api_key"
+      }
+    }
+  },
+  "agents": {
+    "defaults": {
+      "model": {
+        "primary": "volcengine-plan/doubao-seed-2.0-code"
+      },
+      "models": {
+        "volcengine-plan/ark-code-latest": {},
+        "volcengine-plan/doubao-seed-code": {},
+        "volcengine-plan/glm-4.7": {},
+        "volcengine-plan/deepseek-v3.2": {},
+        "volcengine-plan/doubao-seed-2.0-code": {},
+        "volcengine-plan/doubao-seed-2.0-pro": {},
+        "volcengine-plan/doubao-seed-2.0-lite": {},
+        "volcengine-plan/minimax-m2.5": {},
+        "volcengine-plan/kimi-k2.5": {}
+      },
+      "workspace": "/Users/graves/.openclaw/workspace",
+      "blockStreamingDefault": "off",
+      "sandbox": {
+        "mode": "all",
+        "scope": "agent",
+        "workspaceAccess": "rw",
+        "docker": {
+          "image": "openclaw-sandbox:bookworm-slim",
+          "network": "bridge",
+          "cpus": 1,
+          "memory": "2g",
+          "memorySwap": "2g",
+          "pidsLimit": 256
+        }
+      }
+    },
+    "list": [
+      {
+        "id": "main",
+        "workspace": "/Users/graves/.openclaw/workspace"
+      },
+      {
+        "id": "jifu",
+        "workspace": "/Users/graves/.openclaw/workspace-jifu"
+      },
+      {
+        "id": "sibo",
+        "workspace": "/Users/graves/.openclaw/workspace-sibo"
+      },
+      {
+        "id": "shengmo",
+        "workspace": "/Users/graves/.openclaw/workspace-shengmo"
+      },
+      {
+        "id": "jiangzuo",
+        "workspace": "/Users/graves/.openclaw/workspace-jiangzuo"
+      },
+      {
+        "id": "danqing",
+        "workspace": "/Users/graves/.openclaw/workspace-danqing"
+      },
+      {
+        "id": "jingyu",
+        "workspace": "/Users/graves/.openclaw/workspace-jingyu"
+      }
+    ]
+  },
+  "bindings": [
+    {
+      "agentId": "main",
+      "match": {
+        "channel": "feishu",
+        "accountId": "default"
+      }
+    },
+    {
+      "agentId": "jifu",
+      "match": {
+        "channel": "feishu",
+        "accountId": "jifu"
+      }
+    },
+    {
+      "agentId": "sibo",
+      "match": {
+        "channel": "feishu",
+        "accountId": "sibo"
+      }
+    },
+    {
+      "agentId": "shengmo",
+      "match": {
+        "channel": "feishu",
+        "accountId": "shengmo"
+      }
+    },
+    {
+      "agentId": "jiangzuo",
+      "match": {
+        "channel": "feishu",
+        "accountId": "jiangzuo"
+      }
+    },
+    {
+      "agentId": "danqing",
+      "match": {
+        "channel": "feishu",
+        "accountId": "danqing"
+      }
+    },
+    {
+      "agentId": "jingyu",
+      "match": {
+        "channel": "feishu",
+        "accountId": "jingyu"
+      }
+    }
+  ],
+  "tools": {
+    "profile": "coding",
+    "web": {
+      "search": {
+        "provider": "brave"
+      }
+    },
+    "sandbox": {
+      "tools": {
+        "allow": [
+          "exec",
+          "process",
+          "read",
+          "write",
+          "edit",
+          "apply_patch",
+          "sessions_list",
+          "sessions_history",
+          "sessions_send",
+          "sessions_spawn",
+          "session_status",
+          "web_search",
+          "web_fetch",
+          "memory_search",
+          "memory_get"
+        ],
+        "deny": [
+          "browser",
+          "canvas",
+          "nodes",
+          "cron",
+          "discord",
+          "gateway"
+        ]
+      }
+    }
+  },
+  "commands": {
+    "native": "auto",
+    "nativeSkills": "auto",
+    "restart": true,
+    "ownerDisplay": "raw"
+  },
+  "session": {
+    "dmScope": "per-channel-peer"
+  },
+  "channels": {
+    "feishu": {
+      "enabled": true,
+      "defaultAccount": "default",
+      "connectionMode": "websocket",
+      "domain": "feishu",
+      "groupPolicy": "open",
+      "dmPolicy": "open",
+      "allowFrom": [
+        "*"
+      ],
+      "renderMode": "raw",
+      "textChunkLimit": 16000,
+      "chunkMode": "length",
+      "streaming": false,
+      "blockStreaming": false,
+      "accounts": {
+        "default": {
+          "appId": "cli_REDACTED",
+          "appSecret": "REDACTED"
+        },
+        "jifu": {
+          "appId": "cli_REDACTED",
+          "appSecret": "REDACTED"
+        },
+        "sibo": {
+          "appId": "cli_REDACTED",
+          "appSecret": "REDACTED"
+        },
+        "shengmo": {
+          "appId": "cli_REDACTED",
+          "appSecret": "REDACTED"
+        },
+        "jiangzuo": {
+          "appId": "cli_REDACTED",
+          "appSecret": "REDACTED"
+        },
+        "danqing": {
+          "appId": "cli_REDACTED",
+          "appSecret": "REDACTED"
+        },
+        "jingyu": {
+          "appId": "cli_REDACTED",
+          "appSecret": "REDACTED"
+        }
+      }
+    }
+  },
+  "gateway": {
+    "port": 18789,
+    "mode": "local",
+    "bind": "loopback",
+    "auth": {
+      "mode": "token",
+      "token": "REDACTED"
+    },
+    "tailscale": {
+      "mode": "off",
+      "resetOnExit": false
+    },
+    "nodes": {
+      "denyCommands": [
+        "camera.snap",
+        "camera.clip",
+        "screen.record",
+        "contacts.add",
+        "calendar.add",
+        "reminders.add",
+        "sms.send"
+      ]
+    }
+  },
+  "plugins": {
+    "load": {
+      "paths": [
+        "/Users/graves/.nvm/versions/node/v25.8.1/lib/node_modules/openclaw/extensions/feishu"
+      ]
+    },
+    "entries": {
+      "feishu": {
+        "enabled": true
+      }
+    }
+  },
+  "models": {
+    "providers": {
+      "volcengine-plan": {
+        "baseUrl": "https://ark.cn-beijing.volces.com/api/coding/v3",
+        "apiKey": "REDACTED",
+        "api": "openai-completions",
+        "models": [
+          {
+            "id": "ark-code-latest",
+            "name": "ark-code-latest",
+            "contextWindow": 256000,
+            "maxTokens": 32000,
+            "input": [
+              "text",
+              "image"
+            ]
+          },
+          {
+            "id": "doubao-seed-code",
+            "name": "doubao-seed-code",
+            "contextWindow": 256000,
+            "maxTokens": 32000,
+            "input": [
+              "text",
+              "image"
+            ]
+          },
+          {
+            "id": "glm-4.7",
+            "name": "glm-4.7",
+            "contextWindow": 200000,
+            "maxTokens": 128000,
+            "input": [
+              "text"
+            ]
+          },
+          {
+            "id": "deepseek-v3.2",
+            "name": "deepseek-v3.2",
+            "contextWindow": 128000,
+            "maxTokens": 32000
+          },
+          {
+            "id": "doubao-seed-2.0-code",
+            "name": "doubao-seed-2.0-code",
+            "contextWindow": 256000,
+            "maxTokens": 128000,
+            "input": [
+              "text",
+              "image"
+            ]
+          },
+          {
+            "id": "doubao-seed-2.0-pro",
+            "name": "doubao-seed-2.0-pro",
+            "contextWindow": 256000,
+            "maxTokens": 128000,
+            "input": [
+              "text",
+              "image"
+            ]
+          },
+          {
+            "id": "doubao-seed-2.0-lite",
+            "name": "doubao-seed-2.0-lite",
+            "contextWindow": 256000,
+            "maxTokens": 128000,
+            "input": [
+              "text",
+              "image"
+            ]
+          },
+          {
+            "id": "minimax-m2.5",
+            "name": "minimax-m2.5",
+            "contextWindow": 200000,
+            "maxTokens": 128000,
+            "input": [
+              "text"
+            ]
+          },
+          {
+            "id": "kimi-k2.5",
+            "name": "kimi-k2.5",
+            "contextWindow": 256000,
+            "maxTokens": 32000,
+            "input": [
+              "text",
+              "image"
+            ]
+          }
+        ]
+      }
+    }
+  }
+}

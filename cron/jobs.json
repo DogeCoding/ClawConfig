@@ -1,0 +1,25 @@
+{
+  "version": 1,
+  "jobs": [
+    {
+      "id": "daily-news-push",
+      "name": "每日新闻推送",
+      "description": "每天早上 8:30 推送新闻到 News 群",
+      "schedule": {
+        "kind": "cron",
+        "expr": "30 8 * * *"
+      },
+      "timezone": "Asia/Shanghai",
+      "enabled": true,
+      "state": {
+        "nextRunAtMs": 1774312200000
+      },
+      "wakeMode": "now",
+      "payload": {
+        "kind": "systemEvent",
+        "text": "cd /Users/graves/.openclaw/workspace &amp;&amp; python3 daily_news_push.py"
+      },
+      "sessionTarget": "main"
+    }
+  ]
+}

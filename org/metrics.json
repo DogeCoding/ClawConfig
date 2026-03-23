@@ -1,0 +1,7 @@
+{
+  "version": 1,
+  "rolling_24h_tokens": 0,
+  "last_updated_iso": null,
+  "last_spike_window_tokens": 0,
+  "note": "由对话侧或手工按网关用量更新；未更新时守卫只做空转/卡死检测。"
+}
