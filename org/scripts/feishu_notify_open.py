@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 import json
+import os
 import sys
 import time
 import uuid
@@ -44,6 +45,14 @@ def send_p2p_text(token: str, open_id: str, text: str) -> dict:
 
 
 def load_default_account() -> tuple[str, str]:
+    eid = os.environ.get("FEISHU_APP_ID", "").strip()
+    esec = os.environ.get("FEISHU_APP_SECRET", "").strip()
+    if eid and esec:
+        return eid, esec
+    if not CFG.is_file():
+        raise SystemExit(
+            "missing ~/.openclaw/openclaw.json; or set FEISHU_APP_ID and FEISHU_APP_SECRET (e.g. in org/local.env)"
+        )
     raw = json.loads(CFG.read_text(encoding="utf-8"))
     fei = raw.get("channels", {}).get("feishu", {})
     da = fei.get("defaultAccount") or "default"
