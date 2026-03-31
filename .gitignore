@@ -1,31 +1,90 @@
+# =============================================================================
+# 目标：仓库只保留「可复制的配置 + 文档 + 技能源码」，不保留下载产物与密钥。
+# 若曾误提交大目录，改完 ignore 后需执行（一次即可）：
+#   git rm -r --cached workspace/.cache workspace/.local workspace/node_modules workspace/.npm
+#   git commit -m "chore: stop tracking workspace build caches"
+# =============================================================================
+
+# --- 密钥与本地环境（可复制时用 *.example 代替）---
+.env
+.env.*
+!.env.example
+org/local.env
+org/volc-api.env
+settings/
+
+# --- OpenClaw 主 workspace：语言运行时、包管理器、浏览器缓存（体积极大）---
+workspace/.local/
+workspace/.cache/
+workspace/.npm/
+workspace/node_modules/
+
+# 其它 workspace-* 子岗（若日后在仓库内装依赖，同规则生效）
+workspace-*/.local/
+workspace-*/.cache/
+workspace-*/.npm/
+workspace-*/node_modules/
+
+# --- 任意路径下的依赖与虚拟环境（技能、脚本子项目）---
+**/node_modules/
+**/.venv/
+.venv/
+pip-wheel-metadata/
+*.egg-info/
+
+# --- 本机托管浏览器配置（Chrome profile 等）---
+browser/
+
+# --- 媒体与临时大包（按需保留示例小文件即可）---
 memory/
 media/
+*.mp4
+*.webm
+*.mov
+*.zip
+*.tar.gz
+*.tgz
+
+# --- Python ---
 **/__pycache__/
 *.pyc
-openclaw.json
-openclaw.json.bak
-openclaw.json.bak.*
+.Python
+
+# --- 日志与运行态 ---
 *.log
 logs/
 update-check.json
 exec-approvals.json
+**/.perf_last_notify
+
+# --- OpenClaw 配置里常含密钥：用示例文件进库 ---
+openclaw.json
+openclaw.json.bak
+openclaw.json.bak.*
+
+# --- 设备与凭证目录 ---
 credentials/
 devices/
 identity/
 feishu/dedup/
 sandboxes/
-org/local.env
-org/.perf_last_notify
 org/backups/
-**/.perf_last_notify
-agents/*/sessions/
-agents/*/agent/auth-profiles.json
+org/.perf_last_notify
 auth-profiles.json
-workspace/.git/
-workspace/MEMORY.md
-workspace/memory/
+agents/*/agent/auth-profiles.json
+
+# --- 会话与长 transcript（体积极大）---
+agents/*/sessions/
 **/*.jsonl
 **/*.jsonl.reset.*
 **/.openclaw/workspace-state.json
+
+# --- 嵌套 git / 个人记忆（不随组织仓库复制）---
+workspace/.git/
+workspace/MEMORY.md
+workspace/memory/
+
+# --- 杂项 ---
 .DS_Store
+Thumbs.db
 cron/jobs.json.bak

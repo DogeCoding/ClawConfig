@@ -100,7 +100,8 @@
           "id": "ark-code-latest",
           "name": "ark-code-latest",
           "input": [
-            "text"
+            "text",
+            "image"
           ],
           "contextWindow": 256000,
           "maxTokens": 32000,
@@ -117,7 +118,8 @@
           "id": "doubao-seed-code",
           "name": "doubao-seed-code",
           "input": [
-            "text"
+            "text",
+            "image"
           ],
           "contextWindow": 256000,
           "maxTokens": 32000,
@@ -239,7 +241,8 @@
           "id": "kimi-k2.5",
           "name": "kimi-k2.5",
           "input": [
-            "text"
+            "text",
+            "image"
           ],
           "contextWindow": 256000,
           "maxTokens": 32000,
@@ -251,38 +254,6 @@
             "cacheWrite": 0
           },
           "api": "openai-completions"
-        },
-        {
-          "id": "kimi-k2-thinking",
-          "name": "Kimi K2 Thinking",
-          "reasoning": false,
-          "input": [
-            "text"
-          ],
-          "cost": {
-            "input": 0.0001,
-            "output": 0.0002,
-            "cacheRead": 0,
-            "cacheWrite": 0
-          },
-          "contextWindow": 256000,
-          "maxTokens": 4096
-        },
-        {
-          "id": "doubao-seed-code-preview-251028",
-          "name": "Doubao Seed Code Preview",
-          "reasoning": false,
-          "input": [
-            "text"
-          ],
-          "cost": {
-            "input": 0.0001,
-            "output": 0.0002,
-            "cacheRead": 0,
-            "cacheWrite": 0
-          },
-          "contextWindow": 256000,
-          "maxTokens": 4096
         }
       ],
       "apiKey": "f7183997-a3fc-4b78-a75b-daf89ade870b"

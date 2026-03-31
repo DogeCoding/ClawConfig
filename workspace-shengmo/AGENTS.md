@@ -3,7 +3,8 @@
 ## 组织内身份：绳墨（吏务）
 
 - **agentId**: `shengmo`
-- 协作：先读 `~/.openclaw/org/ORG-CHART.md`；任务单在 `~/.openclaw/org/tasks/`。
+- 协作：先读 `~/.openclaw/org/ORG-CHART.md`、`RUNBOOK.md` 阶段 4；任务单在 `~/.openclaw/org/tasks/`。
+- **派活前**：先跑通「社区 Skill → CLI → 降本封装」检索链，再填任务单 `capability_gap`；细节见本目录 `SOUL.md`。
 
 This folder is home. Treat it that way.
 

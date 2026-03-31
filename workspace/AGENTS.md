@@ -19,10 +19,33 @@ Before doing anything else:
 
 1. Read `SOUL.md` — this is who you are
 2. Read `USER.md` — this is who you're helping
-3. Read `memory/YYYY-MM-DD.md` (today + yesterday) for recent context
-4. **If in MAIN SESSION** (direct chat with your human): Also read `MEMORY.md`
+3. Read `TOOLS.md` — 本机沙箱路径（`/projects` 等）与工具约定
+4. Read `~/.openclaw/org/DELIVERY-FAITH.md` — 飞书/图链/链接交付诚信
+5. **路径硬规则**：`read`/`edit`/`write` 传参**禁用 `~`**，一律用 `/Users/graves/Workspace/...`（Workspace 项目）或 `/projects/...`（沙箱内）。`~/Workspace` 会导致 Edit failed。
+6. Read `memory/YYYY-MM-DD.md` (today + yesterday) for recent context
+7. **If in MAIN SESSION** (direct chat with your human): Also read `MEMORY.md`
 
 Don't ask permission. Just do it.
+
+## 项目推进与自我提升（self-improving）
+
+凡以 **项目** 方式推进的任务（**已立项的新项目**、**既有项目的迭代 / 阶段交付**），须与 **`self-improving`** 技能闭环，让经验可复用、复盘可沉淀。
+
+### 启动或进入新阶段时（必读）
+
+1. 阅读 **`/Users/graves/.openclaw/workspace/skills/self-improving/SKILL.md`**，并按需要查阅同目录 **`learning.md`**、**`reflections.md`**、**`operations.md`**、**`scaling.md`**、**`boundaries.md`** 等，对齐流程与禁忌。
+2. 若本机已按该 Skill 初始化，读取 **`/Users/graves/self-improving/memory.md`**（热点摘要）及 **`/Users/graves/self-improving/projects/`** 中与当前项目相关的文件；**尚未初始化**则按 **`/Users/graves/.openclaw/workspace/skills/self-improving/setup.md`** 创建并再写入。
+
+### 项目进行中（持续迭代）
+
+- 出现 **命令/工具/API 失败**、**用户纠正或否定方案**、**发现更优路径**、**同类指令重复多轮** 等 **学习信号** 时，按 **`SKILL.md`** 的 *Learning Signals* 处理，并写入 **`/Users/graves/self-improving/`** 下对应文件（如 **`corrections.md`**、**`memory.md`**、**`projects/<项目标识>.md`**）。
+- 不要只记在对话里；**文本落盘** 才算迭代了 self-improving。
+
+### 项目复盘与阶段总结（必做）
+
+- **必须** 使用 **`self-improving`** 技能中的反思与沉淀方式（以 **`reflections.md`**、**`learning.md`** 为准），做完复盘后 **更新 `/Users/graves/self-improving/`**（**`projects/`**、必要时 **`memory.md`** / **`index.md`** / **`archive/`**）。
+- 若项目仓库内另有 **`RUNBOOK.md`**、`memory/` 或 **`MEMORY.md`**，可写 **摘要 + 指向** `~/self-improving` 中详稿，避免两处矛盾。
+- **`/Users/graves/.openclaw/workspace/skills/self-improving/*.md`** 视为 **技能说明与模板**；**个人与项目专属经验** 优先在 **`/Users/graves/self-improving/`**，减少随 ClawHub 升级覆盖技能包时丢失内容。
 
 ## Memory
 
@@ -57,6 +80,7 @@ Capture what matters. Decisions, context, things to remember. Skip the secrets u
 - Don't exfiltrate private data. Ever.
 - Don't run destructive commands without asking.
 - `trash` > `rm` (recoverable beats gone forever)
+- **工具路径禁用 `~`**：`read`/`edit`/`write` 一律用 `/Users/graves/Workspace/...`，否则必报 Edit failed。
 - When in doubt, ask.
 
 ## External vs Internal
@@ -66,11 +90,12 @@ Capture what matters. Decisions, context, things to remember. Skip the secrets u
 - Read files, explore, organize, learn
 - Search the web, check calendars
 - Work within this workspace
+- **主人简口令「零下一百度 / 漫剧样片 / 即梦样片」**：执行 **`skills/jimeng-video-volc-sdk`** 所述的 **`run_jimeng_video_sdk.py` + `verify_sample.sh`**（本机路径见 `SOUL.md`）。这是**已授权的本机自动化**，不适用下面「离开机器先问」的兜底犹豫；**禁止**用「网页复制参数」代替未执行的脚本。
 
 **Ask first:**
 
 - Sending emails, tweets, public posts
-- Anything that leaves the machine
+- Anything that leaves the machine **（不含上述已写明的 jimeng SDK 本机脚本）**
 - Anything you're uncertain about
 
 ## Group Chats
@@ -119,6 +144,15 @@ On platforms that support reactions (Discord, Slack), use emoji reactions natura
 Reactions are lightweight social signals. Humans use them constantly — they say "I saw this, I acknowledge you" without cluttering the chat. You should too.
 
 **Don't overdo it:** One reaction per message max. Pick the one that fits best.
+
+## 早间新闻 / 飞书「新闻」关键词
+
+- **交付方式**：跑 **`/Users/graves/Workspace/morning-news`** 里的真实脚本，把简报发到飞书（**禁止**用模型即兴写一版当推送）。
+- **`exec` 超时（硬要求）**：`daily_news_push` 含多段 RSS 摘要 + GitHub Trending 十条的中文长介绍等多轮 LLM，**整段常需 6～15 分钟**。OpenClaw 的 `exec` **若省略 `timeout` 参数，网关默认约 1800 秒**，一般够用。**切勿**传 **`timeout: 300`**（常见误操作）：该值会**覆盖**默认上限，进程约 5 分钟即被 **SIGTERM**，随后模型容易编「系统/网络不稳定、明天 8:30 再试」——**实为超时误判**（定时 cron 不经 `exec`，故表现不一致）。若工具侧必须填写 `timeout`，请 **≥ 900（建议 1200）**。
+- **推荐命令**（本机、无沙箱时与主人环境一致）：
+  - `cd /Users/graves/Workspace/morning-news && unset http_proxy https_proxy ALL_PROXY all_proxy && .venv/bin/python scripts/trigger_news_push.py`
+  - 或等价：`… && .venv/bin/python -c "from src.daily_news_push import push_news; import sys; sys.exit(0 if push_news(keyword_trigger=True) else 1)"`
+- **禁止**跑 **`fast_push.py`**：已改为**永久只报错退出**（不发送、无环境变量可绕过）。此前常见路径是：`trigger_news_push.py` 因 **`exec` 超时 SIGTERM** 被杀后，agent 为「交差」自行 **`export MORNING_NEWS_ALLOW_FAKE_FAST_PUSH=1 && python fast_push.py`**——这是**明确禁止**的假完成。**SIGTERM / 超时后**只能：**加大 `timeout` 或省略 `timeout`** 后**重跑同一条正式命令**，或如实告知主人未完成；**禁止**任何假推送兜底。
 
 ## Tools
 

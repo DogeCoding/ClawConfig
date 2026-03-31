@@ -1,0 +1,8 @@
+{
+  "name": "last30days-bird-search",
+  "private": true,
+  "type": "module",
+  "dependencies": {
+    "@steipete/sweet-cookie": "^0.2.0"
+  }
+}

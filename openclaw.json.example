@@ -52,31 +52,52 @@
     "list": [
       {
         "id": "main",
-        "workspace": "/Users/graves/.openclaw/workspace"
+        "workspace": "/Users/graves/.openclaw/workspace",
+        "model": {
+          "primary": "volcengine-plan/doubao-seed-2.0-pro"
+        }
       },
       {
         "id": "jifu",
-        "workspace": "/Users/graves/.openclaw/workspace-jifu"
+        "workspace": "/Users/graves/.openclaw/workspace-jifu",
+        "model": {
+          "primary": "volcengine-plan/doubao-seed-2.0-pro"
+        }
       },
       {
         "id": "sibo",
-        "workspace": "/Users/graves/.openclaw/workspace-sibo"
+        "workspace": "/Users/graves/.openclaw/workspace-sibo",
+        "model": {
+          "primary": "volcengine-plan/deepseek-v3.2"
+        }
       },
       {
         "id": "shengmo",
-        "workspace": "/Users/graves/.openclaw/workspace-shengmo"
+        "workspace": "/Users/graves/.openclaw/workspace-shengmo",
+        "model": {
+          "primary": "volcengine-plan/doubao-seed-2.0-lite"
+        }
       },
       {
         "id": "jiangzuo",
-        "workspace": "/Users/graves/.openclaw/workspace-jiangzuo"
+        "workspace": "/Users/graves/.openclaw/workspace-jiangzuo",
+        "model": {
+          "primary": "volcengine-plan/ark-code-latest"
+        }
       },
       {
         "id": "danqing",
-        "workspace": "/Users/graves/.openclaw/workspace-danqing"
+        "workspace": "/Users/graves/.openclaw/workspace-danqing",
+        "model": {
+          "primary": "volcengine-plan/doubao-seed-2.0-pro"
+        }
       },
       {
         "id": "jingyu",
-        "workspace": "/Users/graves/.openclaw/workspace-jingyu"
+        "workspace": "/Users/graves/.openclaw/workspace-jingyu",
+        "model": {
+          "primary": "volcengine-plan/kimi-k2.5"
+        }
       }
     ]
   },
@@ -135,7 +156,7 @@
     "profile": "coding",
     "web": {
       "search": {
-        "provider": "brave"
+        "enabled": false
       }
     },
     "sandbox": {
@@ -183,10 +204,21 @@
       "defaultAccount": "default",
       "connectionMode": "websocket",
       "domain": "feishu",
-      "groupPolicy": "open",
-      "dmPolicy": "open",
+      "groupPolicy": "allowlist",
+      "groupAllowFrom": [
+        "oc_REPLACE_WITH_CHAT_ID"
+      ],
+      "groups": {
+        "oc_REPLACE_WITH_CHAT_ID": {
+          "allowFrom": [
+            "ou_REPLACE_WITH_YOUR_OPEN_ID"
+          ],
+          "requireMention": true
+        }
+      },
+      "dmPolicy": "allowlist",
       "allowFrom": [
-        "*"
+        "ou_REPLACE_WITH_YOUR_OPEN_ID"
       ],
       "renderMode": "raw",
       "textChunkLimit": 16000,

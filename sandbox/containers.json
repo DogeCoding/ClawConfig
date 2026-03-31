@@ -1,0 +1,81 @@
+{
+  "entries": [
+    {
+      "containerName": "openclaw-sbx-agent-juyi-6f94fd35",
+      "backendId": "docker",
+      "runtimeLabel": "openclaw-sbx-agent-juyi-6f94fd35",
+      "sessionKey": "agent:juyi",
+      "createdAtMs": 1774516553380,
+      "lastUsedAtMs": 1774516553857,
+      "image": "openclaw-sandbox-custom:latest",
+      "configLabelKind": "Image",
+      "configHash": "90a32324c2f836d93f9bea60f00b15c34ad9de8215ba4da61a26be145a01fb25"
+    },
+    {
+      "containerName": "openclaw-sbx-agent-danqing-9fe3ede6",
+      "backendId": "docker",
+      "runtimeLabel": "openclaw-sbx-agent-danqing-9fe3ede6",
+      "sessionKey": "agent:danqing",
+      "createdAtMs": 1774516553378,
+      "lastUsedAtMs": 1774516554022,
+      "image": "openclaw-sandbox-custom:latest",
+      "configLabelKind": "Image",
+      "configHash": "ee2903f3c7df368866cbc808b3422cefead06d59c23c87db0ba62e2f6a0ed4c3"
+    },
+    {
+      "containerName": "openclaw-sbx-agent-sibo-a9f4108e",
+      "backendId": "docker",
+      "runtimeLabel": "openclaw-sbx-agent-sibo-a9f4108e",
+      "sessionKey": "agent:sibo",
+      "createdAtMs": 1774516553379,
+      "lastUsedAtMs": 1774516554123,
+      "image": "openclaw-sandbox-custom:latest",
+      "configLabelKind": "Image",
+      "configHash": "819db5e0c46aaea07529fd065c18a9b3069f57e4f5e349b0ccef9c3534771f30"
+    },
+    {
+      "containerName": "openclaw-sbx-agent-jiangzuo-d0d72c93",
+      "backendId": "docker",
+      "runtimeLabel": "openclaw-sbx-agent-jiangzuo-d0d72c93",
+      "sessionKey": "agent:jiangzuo",
+      "createdAtMs": 1774516553812,
+      "lastUsedAtMs": 1774516554176,
+      "image": "openclaw-sandbox-custom:latest",
+      "configLabelKind": "Image",
+      "configHash": "0dee69c4d092c00b0887755301f32ef907825d301e7b9075e8f7ad842f7e74fa"
+    },
+    {
+      "containerName": "openclaw-sbx-agent-shengmo-5a8a207d",
+      "backendId": "docker",
+      "runtimeLabel": "openclaw-sbx-agent-shengmo-5a8a207d",
+      "sessionKey": "agent:shengmo",
+      "createdAtMs": 1774516557076,
+      "lastUsedAtMs": 1774516557353,
+      "image": "openclaw-sandbox-custom:latest",
+      "configLabelKind": "Image",
+      "configHash": "ae2caabb849fc8fa08f93b4b5abeaea7e8c82275afac7909b6aab8c506d431ef"
+    },
+    {
+      "containerName": "openclaw-sbx-agent-jifu-ad75ff9f",
+      "backendId": "docker",
+      "runtimeLabel": "openclaw-sbx-agent-jifu-ad75ff9f",
+      "sessionKey": "agent:jifu",
+      "createdAtMs": 1774516558760,
+      "lastUsedAtMs": 1774516559052,
+      "image": "openclaw-sandbox-custom:latest",
+      "configLabelKind": "Image",
+      "configHash": "53b4f07d33802cc72b1dc410eb84d72a1c7f97922fb0da989e0d769bb2bd80b6"
+    },
+    {
+      "containerName": "openclaw-sbx-agent-jingyu-2dd9248d",
+      "backendId": "docker",
+      "runtimeLabel": "openclaw-sbx-agent-jingyu-2dd9248d",
+      "sessionKey": "agent:jingyu",
+      "createdAtMs": 1774516559449,
+      "lastUsedAtMs": 1774516559713,
+      "image": "openclaw-sandbox-custom:latest",
+      "configLabelKind": "Image",
+      "configHash": "509ddfc943698376ff0f0c337132e3521a1d2b77d428b94fcaa379cec213a6e8"
+    }
+  ]
+}

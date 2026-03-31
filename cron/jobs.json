@@ -12,14 +12,90 @@
       "timezone": "Asia/Shanghai",
       "enabled": true,
       "state": {
-        "nextRunAtMs": 1774312200000
+        "nextRunAtMs": 1775003400000,
+        "lastRunAtMs": 1774917000003,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 151065,
+        "lastDeliveryStatus": "not-requested",
+        "consecutiveErrors": 0
       },
       "wakeMode": "now",
       "payload": {
         "kind": "systemEvent",
-        "text": "cd /Users/graves/.openclaw/workspace &amp;&amp; python3 daily_news_push.py"
+        "text": "cd /Users/graves/Workspace/morning-news && python3 src/daily_news_push.py"
       },
-      "sessionTarget": "main"
+      "sessionTarget": "main",
+      "updatedAtMs": 1774917151068
+    },
+    {
+      "id": "98942202-eb0a-49a8-b88f-c1397d9950c5",
+      "agentId": "main",
+      "sessionKey": "agent:main:feishu:group:oc_0a302c0d3c31504a5e06dd3c4d54fb6f",
+      "name": "同步飞书群项目公告",
+      "enabled": true,
+      "createdAtMs": 1774321275410,
+      "updatedAtMs": 1774926120601,
+      "schedule": {
+        "kind": "every",
+        "everyMs": 86400000,
+        "anchorMs": 1774321275410
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "检查/Users/graves/Workspace下的项目变化，更新飞书群公告的项目清单"
+      },
+      "delivery": {
+        "mode": "announce",
+        "channel": "feishu",
+        "to": "oc_0a302c0d3c31504a5e06dd3c4d54fb6f"
+      },
+      "state": {
+        "nextRunAtMs": 1775012475445,
+        "lastRunAtMs": 1774926075445,
+        "lastRunStatus": "ok",
+        "lastStatus": "ok",
+        "lastDurationMs": 45156,
+        "lastDeliveryStatus": "delivered",
+        "consecutiveErrors": 0,
+        "lastDelivered": true
+      }
+    },
+    {
+      "id": "manhua-sample-progress-sync",
+      "name": "漫剧样片进度同步",
+      "description": "每小时检查漫剧样片生成情况，据实汇报进度",
+      "schedule": {
+        "kind": "every",
+        "everyMs": 3600000,
+        "anchorMs": 1774646818428
+      },
+      "timezone": "Asia/Shanghai",
+      "enabled": true,
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "检查/Users/graves/Workspace/film-projects/零下一百度生存日记漫剧/成片/目录下的mp4文件，执行bash /Users/graves/Workspace/film-projects/jimeng-volc-api/verify_sample.sh验证，据实汇报当前进度，禁止虚报完成"
+      },
+      "sessionTarget": "main",
+      "delivery": {
+        "mode": "announce",
+        "channel": "feishu",
+        "to": "oc_9ced67d1878d4622e2fccbf6c62f4bd2"
+      },
+      "state": {
+        "nextRunAtMs": 1774949218741,
+        "lastRunAtMs": 1774945618741,
+        "lastRunStatus": "skipped",
+        "lastStatus": "skipped",
+        "lastDurationMs": 2,
+        "lastDeliveryStatus": "unknown",
+        "consecutiveErrors": 0,
+        "lastError": "main job requires payload.kind=\"systemEvent\""
+      },
+      "updatedAtMs": 1774945618743
     }
   ]
 }

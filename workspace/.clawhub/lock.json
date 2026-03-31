@@ -12,6 +12,58 @@
     "feishu-messaging": {
       "version": "0.0.3",
       "installedAt": 1774207801628
+    },
+    "sjht-doubao-image-gen": {
+      "version": "1.0.0",
+      "installedAt": 1774322762594
+    },
+    "summarize": {
+      "version": "1.0.0",
+      "installedAt": 1774461421523
+    },
+    "ontology": {
+      "version": "1.0.4",
+      "installedAt": 1774461544752
+    },
+    "github": {
+      "version": "1.0.0",
+      "installedAt": 1774461602015
+    },
+    "proactive-agent": {
+      "version": "3.1.0",
+      "installedAt": 1774461663401
+    },
+    "weather": {
+      "version": "1.0.0",
+      "installedAt": 1774461729874
+    },
+    "skill-vetter": {
+      "version": "1.0.0",
+      "installedAt": 1774461901474
+    },
+    "gog": {
+      "version": "1.0.0",
+      "installedAt": 1774461962119
+    },
+    "self-improving": {
+      "version": "1.2.16",
+      "installedAt": 1774461974565
+    },
+    "last30days-official": {
+      "version": "2.9.3",
+      "installedAt": 1774754119870
+    },
+    "capability-evolver": {
+      "version": "1.40.2",
+      "installedAt": 1774922586306
+    },
+    "ffmpeg-video-editor": {
+      "version": "1.0.0",
+      "installedAt": 1774924681515
+    },
+    "humanizer-zh": {
+      "version": "1.0.0",
+      "installedAt": 1774925583660
     }
   }
 }
